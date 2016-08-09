@@ -87,9 +87,18 @@
 #pragma mark - PLDLinkBankMFAContainerViewControllerDelegate
 
 - (void)mfaContainerViewController:(PLDLinkBankMFAContainerViewController *)viewController
-       didFinishWithAuthentication:(PLDAuthentication *)authentication {
+       didFinishWithAuthentication:(PLDAuthentication *)authentication andAccounts:(NSArray *)accounts {
+  
+  if(accounts) {
+    NSLog(@"%@", accounts);
+    // Show new view with callback for selected id
+      [_linkDelegate linkNavigationContoller:self
+                    didFinishWithAccessToken:authentication.accessToken andAccounts:accounts];
+      return;
+  }
+  
   [_linkDelegate linkNavigationContoller:self
-                didFinishWithAccessToken:authentication.accessToken];
+                didFinishWithAccessToken:authentication.accessToken andAccounts:nil];
 }
 
 #pragma mark - UINavigationControllerDelegate

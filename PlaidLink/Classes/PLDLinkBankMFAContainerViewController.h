@@ -16,7 +16,7 @@
 @protocol PLDLinkBankMFAContainerViewControllerDelegate <NSObject>
 
 - (void)mfaContainerViewController:(PLDLinkBankMFAContainerViewController *)viewController
-       didFinishWithAuthentication:(PLDAuthentication *)authentication;
+       didFinishWithAuthentication:(PLDAuthentication *)authentication andAccounts:(NSArray *)accounts;
 
 @end
 

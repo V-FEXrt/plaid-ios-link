@@ -16,7 +16,7 @@
 @protocol PLDLinkBankLoginViewControllerDelegate <NSObject>
 
 - (void)loginViewController:(PLDLinkBankMFALoginViewController *)loginViewController
-    didFinishWithAuthentication:(PLDAuthentication *)authentication;
+didFinishWithAuthentication:(PLDAuthentication *)authentication andAccounts:(NSArray *)accounts;
 
 @end
 

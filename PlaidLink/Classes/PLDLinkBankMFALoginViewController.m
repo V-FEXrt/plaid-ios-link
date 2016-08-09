@@ -81,7 +81,8 @@
       [weakView.submitButton hideLoadingState];
       return;
     }
-    [weakSelf.delegate loginViewController:self didFinishWithAuthentication:authentication];
+
+    [weakSelf.delegate loginViewController:self didFinishWithAuthentication:authentication andAccounts:response[@"accounts"]];
   }];
 }
 
